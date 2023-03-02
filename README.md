@@ -1,4 +1,4 @@
-#安装openai
+# 安装openai
 ```bash
 # use env of anaconda
 conda create -n my_python3.8_env python=3.8
