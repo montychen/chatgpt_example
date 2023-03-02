@@ -1,1 +1,4 @@
-# python test.py
+# 运行
+```python
+python test.py
+```
