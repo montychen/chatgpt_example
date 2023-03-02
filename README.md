@@ -1,1 +1,1 @@
-# chatgpt_study
+# python test.py
