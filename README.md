@@ -41,8 +41,6 @@ conda env remove -n env_name
 
 #更新 conda
 conda update conda
-
-
 ```
 
 # 安装openai
@@ -55,3 +53,23 @@ pip install openai
 python test.py
 ```
 
+
+# faq
+
+#### error: metadata-generation-failed
+````
+error: subprocess-exited-with-error
+
+  × python setup.py egg_info did not run successfully.
+  │ exit code: 1
+  ╰─> [1 lines of output]
+      ERROR: Can not execute `setup.py` since setuptools is not available in the build environment.
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+````
+By running `pip install setuptools --upgrade` fixed the version with Successfully installed setuptools-67.2.0
