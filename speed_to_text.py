@@ -2,12 +2,13 @@
 import os
 import openai
 
-openai.api_key='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'
+openai.api_key = "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" # 请替换为您的API密钥
+# openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def speed_to_text():
-    audio_file1 = open("./zhi.m4a", "rb")
-    audio_file2 = open("./yue.m4a", "rb")
-    audio_file3 = open("./yue.m4a", "rb")
+    audio_file1 = open("res/zhi.m4a", "rb")
+    audio_file2 = open("res/yue.m4a", "rb")
+    audio_file3 = open("res/yue.m4a", "rb")
 
     transcript1 = openai.Audio.transcribe('whisper-1', audio_file1) # 把音频转换成音频所使用的语言对应的文字。
     transcript2 = openai.Audio.transcribe('whisper-1', audio_file2) 
