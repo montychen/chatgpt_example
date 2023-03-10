@@ -20,6 +20,3 @@ def speed_to_text():
 
 if __name__=="__main__":
     speed_to_text()
-
-
-
