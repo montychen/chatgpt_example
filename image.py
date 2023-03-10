@@ -8,7 +8,7 @@ from io import BytesIO
 from PIL import Image
 
 
-openai.api_key = "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"  # 请替换为您的API密钥
+openai.api_key = "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"  # 请替换为您的API密钥
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
@@ -41,7 +41,7 @@ def image_create_variation():
 
     # Read the image file from disk and resize it
     image = Image.open("res/use_2_create_variation.png")
-    width, height = 512, 512
+    width, height = 1024, 1024
     image = image.resize((width, height))
 
     # Convert the image to a BytesIO object
@@ -49,18 +49,20 @@ def image_create_variation():
     image.save(byte_stream, format='PNG')
     byte_array = byte_stream.getvalue()
 
+    num_image = 2  # 希望生成图片的数量
     response = openai.Image.create_variation(
         image=byte_array,
-        n=3,
-        size="256x256",
+        n=num_image,
+        size="512x512",
         response_format="b64_json",
     )
-    image_data = b64decode(response["data"][0]["b64_json"])
-    with open("res/output_variation.png", mode="wb") as png:
-        png.write(image_data)
+    for i in range(num_image):
+        image_data = b64decode(response["data"][0]["b64_json"])
+        with open("res/output_variation" + str(i) + ".png", mode="wb") as png:
+            png.write(image_data)
 
 
 if __name__ == "__main__":
-    image_to_url()
+    # image_to_url()
     image_create_variation()
-    image_to_file()
+    # image_to_file()
