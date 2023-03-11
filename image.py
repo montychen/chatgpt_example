@@ -8,7 +8,7 @@ from io import BytesIO
 from PIL import Image
 
 
-openai.api_key = "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"  # 请替换为您的API密钥
+openai.api_key = "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"  # 请替换为您的API密钥
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
@@ -57,7 +57,7 @@ def image_create_variation():
         response_format="b64_json",
     )
     for i in range(num_image):
-        image_data = b64decode(response["data"][0]["b64_json"])
+        image_data = b64decode(response["data"][i]["b64_json"])
         with open("res/output_variation" + str(i) + ".png", mode="wb") as png:
             png.write(image_data)
 

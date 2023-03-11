@@ -2,29 +2,30 @@
 import openai
 import time
 
-openai.api_key = "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" # 请替换为您的API密钥
+openai.api_key = "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"  # 请替换为您的API密钥
 
-def davinci(prompt):
-    model = "text-davinci-003" # GPT-3模型引擎
-    temperature = 0 # 生成的文本的随机性程度
-    max_tokens = 500 # 生成的文本的最大长度
 
-    res = openai.Completion.create(
-      model=model,
-      prompt=prompt,
-      max_tokens=1024,
-      temperature=temperature,
-    )
+def davinci():
+    model = "text-davinci-003"
+    temperature = 0  # 生成的文本的随机性程度
+    max_tokens = 2048  # 生成的文本的最大长度
 
-    msg = res.choices[0].text.strip()
-    return msg
-
-if __name__=="__main__":
-    # 循环多次进行问答交互
-    while True:
-        prompt = input("->您的问题(quit退出):")
-        if prompt.lower() == "quit":
+    while True:     # 循环多次进行问答交互
+        input_prompt = input("->您的问题(quit退出):")
+        if not input_prompt.strip():      # 如果用户输入为空，退出程序
             break
-        msg = davinci(prompt)
-        print("\n" + msg + "\n")
+
+        res = openai.Completion.create(
+            model=model,
+            prompt=input_prompt,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
+
+        res = res.choices[0].text.strip()
+        print("\n" + res + "\n")
         time.sleep(1)
+
+
+if __name__ == "__main__":
+    davinci()
