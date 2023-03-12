@@ -2,7 +2,7 @@ import openai
 import prompt_toolkit
 
 # 设置 OpenAI API 密钥
-openai.api_key = "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" # 请替换为您的API密钥
+openai.api_key = "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"  # 请替换为您的API密钥
 
 # 设置对话的参数
 model_engine = "text-davinci-002"
