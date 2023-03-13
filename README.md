@@ -1,4 +1,4 @@
-**OpenAI的python接口版本要求： python >= 3.9**
+OpenAI的python接口版本要求： `python >= 3.9`, `openai的版本至少是0.27`
 
 创建虚拟环境 venv 和 anaconda 二选一，推荐**anaconda**
 ## 一、通过 venv 操作虚拟环境
@@ -10,7 +10,7 @@
 #### 激活虚拟环境
 ```bash
 source <环境名称>/bin/activate
-```
+````
 ```bash
 deactivate
 ```
