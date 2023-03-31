@@ -1,7 +1,7 @@
 import os
 import openai
 
-openai.api_key = "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"  # 请替换为您的API密钥
+openai.api_key = "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"  # 请替换为您的API密钥
 
 
 def chat_gtp():
@@ -11,7 +11,8 @@ def chat_gtp():
     assistant机器回复: 由于模型对过去的请求没有记忆，默认是不能理解上下文的。 如果用 assistant 存储先前的响应，这样下一次用户再提问时,
     引用了以前的消息时,后台可以自动帮助openai理解上下文。如果对话超过令牌数量的限制，则需要以某种方式缩短它。
 
-    使用gpt-3.5-turbo您必须保留要传递给模型的对话上下文，以生成相关的连贯响应。这就是它的设计方式。如果您的请求超过 4096 个标记，您甚至可能需要通过语义搜索或其他方式总结、修剪或提取相关部分来缩短它，但这本身就是一个完整的主题。
+    使用gpt-3.5-turbo您必须保留要传递给模型的对话上下文，以生成相关的连贯响应。这就是它的设计方式。如果您的请求超过 4096 个标记，
+    您甚至可能需要通过语义搜索或其他方式总结、修剪或提取相关部分来缩短它，但这本身就是一个完整的主题。
     """
     messages = [
         {"role": "system", "content": "You’re a kind helpful assistant"}

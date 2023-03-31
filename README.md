@@ -1,7 +1,8 @@
 OpenAI的python接口版本要求： `python >= 3.9`, `openai的版本至少是0.27`
 
-创建虚拟环境 venv 和 anaconda 二选一，推荐**anaconda**
-## 一、通过 venv 操作虚拟环境
+# 一、 创建虚拟环境 
+venv 和 [anaconda](https://anaconda.org) 二选一，推荐**anaconda**
+### 1、通过 venv 操作虚拟环境
  **venv** 是python3.3标准库自带的虚拟环境库
 #### 创建虚拟环境
  ```bash
@@ -15,7 +16,7 @@ source <环境名称>/bin/activate
 deactivate
 ```
 
-## 二、通过anaconda 创建虚拟环境
+### 2、通过anaconda 创建虚拟环境
 需要先安装 anaconda
 #### 创建虚拟环境，同时指定python使用3.8版本
 ```bash
@@ -31,24 +32,27 @@ conda activate my_python3.9_env
 ```bash
 conda deactivate
 ```
-#### 其它conda常用命令
+#### 列出有那些环境
 ```bash
-# 列出有那些环境
 conda env list
-
-# 删除虚拟环境
-conda env remove -n env_name
-
-#更新 conda
-conda update conda
 ```
 
-# 安装openai
+#### 删除虚拟环境
+```bash
+conda env remove -n env_name -all
+```
+
+#### 更新 conda
+```bash
+conda update -n base conda
+```
+
+# 二、安装openai
 ```bash
 pip install openai
 ```
 
-# 运行例子
+# 三、运行例子
 ```python
 python test.py
 ```
