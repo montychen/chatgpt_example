@@ -17,7 +17,7 @@ deactivate
 ```
 
 ### 2、通过anaconda 创建虚拟环境
-需要先安装 anaconda
+需要先安装 [anaconda](https://anaconda.org)
 #### 创建虚拟环境，同时指定python使用3.8版本
 ```bash
 conda create -n my_python3.9_env python=3.9
@@ -46,6 +46,19 @@ conda env remove -n env_name -all
 ```bash
 conda update -n base conda
 ```
+
+#### 彻底删除 anaconda
+1. 运行 `anaconda-clean`
+    ```bash
+    conda install anaconda-clean
+    anaconda-clean
+    ```
+2. 删除Anaconda目录，Anaconda的安装文件都包含在一个目录中，所以直接将该目录删除即可。 `conda info` 可以查看到当初 anaconda 安装所在目录
+3. 删除 `~/.bash_profile`中anaconda的环境变量，使用vim打开删除；Anaconda在安装的时候，会**自动**在`~/.bash_profile` 加入一些环境变量。
+
+
+[参考这篇文章](https://blog.csdn.net/weixin_45277161/article/details/127817700)
+
 
 # 二、安装openai
 ```bash
