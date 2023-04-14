@@ -20,13 +20,13 @@ deactivate
 需要先安装 [anaconda](https://anaconda.org)
 #### 创建虚拟环境，同时指定python使用3.8版本
 ```bash
-conda create -n my_python3.9_env python=3.9
+conda create -n my_python3.10_env python=3.10
 ```
 #### 激活 anaconda 虚拟环境
 ```bash
-source activate my_python3.9_env 
+source activate my_python3.10_env 
 # 或者
-conda activate my_python3.9_env 
+conda activate my_python3.10_env 
 ```
 #### 关闭虚拟环境
 ```bash
